@@ -7,6 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div>
+    <span>
+      <%=link_to "Todos", todos_url %> | 
+    </span>
+    <span>
+      <%=link_to "New Todo", new_todo_url %>
+      </span>
+  </div>
+  <div class="session">
+    <%if (current_user) %>
+      Logged in as <%=current_user.email %>, with cookie <%=cookies[:_CSRFTuto_session]%>
+      <%=button_to "Sign out", destroy_user_session_url, method: :delete %>
+    <%else %>
+        Not logged in
+    <% end -%>
+  </div>
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
 
 <%= yield %>
 

